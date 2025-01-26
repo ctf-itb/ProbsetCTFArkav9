@@ -1,0 +1,42 @@
+name: "Lollipop"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: forensics
+description: |- 
+    While casually rummaging through an old wardrobe, I stumbled upon a dusty, forgotten phone. Curious, I powered it on, only to realize it's locked with a pattern I can't remember. Now, the phone sits there, holding onto secrets I can't access. Can you figure out the pattern and reveal what's locked away?
+
+    Attachment:
+    https://drive.google.com/file/d/12Z2nxBWFiKLfEO-gS7gJCAt5vBdTDc3I/view?usp=sharing
+    
+    Password: 07811d2e-12a7-40a1-978d-7d332c7f35d2
+
+    Author: **frennn**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{no_pattern_is_safe_here_except_my_heart}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - easy
+
+# Provide paths to files from the same directory that this file is in
+# files:
+#     - dist/untuk_peserta.zip
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
