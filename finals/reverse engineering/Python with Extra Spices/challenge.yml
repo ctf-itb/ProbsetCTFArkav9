@@ -1,0 +1,33 @@
+name: "Python with Extra Spices"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: reverse engineering
+description: |- 
+    Recently, I learned how to create functions using FunctionType and CodeType 
+    as one of the methods to obfuscate my Python code. I thought it was still 
+    easy for seasoned reversing players. So, I compiled my code using Nuitka 
+    😁. I wonder how hard it is now 🤔?
+
+    Author: **msfir**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{these_spices_can_really_make_pythons_delicious_right?}
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/chall.bin
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
