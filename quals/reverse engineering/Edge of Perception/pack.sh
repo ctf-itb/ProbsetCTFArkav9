@@ -4,22 +4,17 @@ FLAG=$(cat src/flag.txt)
 
 pushd src
 mako-render --var flag="Flag" --output-file chall.py chall.py.mako
-cython --embed --directive language_level=3 -o chall.c chall.py
-gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
-popd
-
-mv src/chall dist/chall
-
-pushd src
-mako-render --var flag="$FLAG" --output-file chall.py chall.py.mako
+python obfuscator.py chall.py chall.py
 cython --embed --directive language_level=3 -o chall.c chall.py
 gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
 
 rm chall.py chall.c
 popd
 
+mv src/chall dist/chall
+
 cat <<EOF >challenge.yml
-name: "Flag Seeker"
+name: "Edge of Perception"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: reverse engineering
@@ -41,9 +36,9 @@ description: |-
     lies somewhere, waiting for one who understands that the journey is not measured in steps, 
     but in perception.
 
-    Beware the mirage: the horizon bends as you move, always centering, always deceiving. To 
-    reach the edge, you must see what the map does not show. The relic does not hide—it waits, 
-    patient and eternal, for the seeker who dares to question the boundaries of the unseen.
+    Beware the mirage: the horizon bends as you move, always centering, always deceiving. The 
+    relic does not hide—it waits, patient and eternal, for the seeker who dares to question the 
+    boundaries of the unseen.
 
     The Expanse is alive. And it is watching.
 

@@ -1,4 +1,4 @@
-name: "Flag Seeker"
+name: "Edge of Perception"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: reverse engineering
@@ -20,9 +20,9 @@ description: |-
     lies somewhere, waiting for one who understands that the journey is not measured in steps, 
     but in perception.
 
-    Beware the mirage: the horizon bends as you move, always centering, always deceiving. To 
-    reach the edge, you must see what the map does not show. The relic does not hide—it waits, 
-    patient and eternal, for the seeker who dares to question the boundaries of the unseen.
+    Beware the mirage: the horizon bends as you move, always centering, always deceiving. The 
+    relic does not hide—it waits, patient and eternal, for the seeker who dares to question the 
+    boundaries of the unseen.
 
     The Expanse is alive. And it is watching.
 

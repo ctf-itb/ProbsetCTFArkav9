@@ -27,6 +27,14 @@ player: tuple[int, int]
 tiles: list[list[str]]
 
 
+def get_terminal_size():
+    data = bytearray(8)
+    fcntl.ioctl(sys.stdout.fileno(), 0x5413, data)
+    row = int.from_bytes(data[:2], "little")
+    col = int.from_bytes(data[2:4], "little")
+    return col, row
+
+
 def init_tiles():
     tiles = [["Nothing" for _ in range(WIDTH)] for _ in range(HEIGHT)]
 
@@ -130,7 +138,7 @@ def handle_input():
 def print_map():
     global player
 
-    col, line = os.get_terminal_size()
+    col, line = get_terminal_size()
     start_x = max(0, (WIDTH - col) // 2)
     end_x = min(WIDTH, start_x + col)
     start_y = max(0, (HEIGHT - line) // 2)
