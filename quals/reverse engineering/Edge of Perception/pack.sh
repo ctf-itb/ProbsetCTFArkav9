@@ -11,6 +11,15 @@ gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
 rm chall.py chall.c
 popd
 
+pushd src
+mako-render --var flag="$FLAG" --output-file chall.py chall.py.mako
+python obfuscator.py chall.py chall.py
+cython --embed --directive language_level=3 -o chall.c chall.py
+gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
+
+rm chall.py chall.c
+popd
+
 mv src/chall dist/chall
 
 cat <<EOF >challenge.yml
