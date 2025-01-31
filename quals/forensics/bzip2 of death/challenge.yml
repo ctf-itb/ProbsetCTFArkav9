@@ -1,0 +1,39 @@
+name: "Bzip2 of Death"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: forensics
+description: |- 
+    🚨❗ **WARNING: This file isn't your average archive—it's a zip bomb! If you extract it carelessly, you risk overwhelming your storage, freezing your system, or even triggering a DoS attack.** 🚨❗
+
+    Someone wanted to keep their message secret at all costs, locking it inside this zip bomb. If you attempt to decompress it, you might end up waiting for hours, days, or even forever. Trying to open it the usual way could cause you to run out of space before you even get close. We're talking about terabytes (1000 GB), petabytes (1.000.000 GB), or even zettabytes (1.000.000.000 GB) of data that could overwhelm your system. But every bomb has a weak spot, right? Can you recover the hidden message without triggering disaster?
+
+    Author: **dovodedomo**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{Bjiiirrrrr_n0_0ne_d0es_11TB_exTr4cTi0n_f4sTer_Th4n_y0uuu_Truly_impressiveee}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - baby
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/biggest_flag_ever_made.bz2
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
