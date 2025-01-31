@@ -3,7 +3,8 @@ name: "oLLLama 9.0"
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: cryptography
 description: |- 
-    So, uhh, tldr.. i made a music payer platform that integrated with the new AI model "oLLLama 9.0", but, can it really play a music tho?
+    So, uhh, tldr.. i made a music player platform that integrated with the new AI model "oLLLama 9.0", but, can it really plays a music tho?
+    p.s. : may took some time to play it, hehe..
 
     Author: **w1ntr**
 
@@ -20,7 +21,7 @@ flags:
 
 # Tags are used to provide additional public tagging to a challenge
 tags:
-    - beginner
+    - ???
 
 # Provide paths to files from the same directory that this file is in
 files:
