@@ -1,1 +1,34 @@
+name: "oLLLama 9.0"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: cryptography
+description: |- 
+    So, uhh, tldr.. i made a music payer platform that integrated with the new AI model "oLLLama 9.0", but, can it really play a music tho?
 
+    Author: **w1ntr**
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{n0w_pl4y1n9___ETA___w3_c4n_g0_wh3n3ve7_y0u_LLL1k3_n0w_wh3r3_are_y0u???}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - beginner
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/app.sage
+    - dist/output.txt
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
