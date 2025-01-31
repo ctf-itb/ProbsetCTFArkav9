@@ -1,0 +1,34 @@
+name: "Enter The Arena"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: cryptography
+description: |- 
+    Have you studied discrete mathematics ⊂(◉‿◉)つ
+
+    Author: **Etynso**
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{EZZZZ_f3rm47_t0_g3t_5t4rt3d_VROOM_VROOM!!!!!!}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - beginner
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/chall.py
+    - dist/output.txt
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
