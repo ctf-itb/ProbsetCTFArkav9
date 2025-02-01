@@ -1,1 +1,40 @@
+name: "The 1000th Regrexor"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: miscellaneous
+description: |- 
+    
 
+    Attachment:
+    https://drive.google.com/file/d/1AODZziGE4wUPJk46n1fCLGdPsstD-t1l/view?usp=drive_link
+
+    Author: **w1ntr**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{gg_y0u_s0lv3d_th1s_v3ry_ea5y_e4sy_ch4ll3n9e___s33_y0u_1n_f1n4l5!!!}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - baby
+
+# Provide paths to files from the same directory that this file is in
+# files:
+#     - dist/untuk_peserta.zip
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
