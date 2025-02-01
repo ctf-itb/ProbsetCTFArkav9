@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma sigma bois</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            background-color: #151515;
+            font-family: 'Inter';
+            font-size: 22px;
+            overflow: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #151515;
+            color: white;
+            padding: 10px 20px;
+            height: 45px;
+            box-shadow: 0 4px 8px 0 rgba(91, 91, 91, 0.1), 0 6px 20px 0 rgba(147, 147, 147, 0.09);
+        }
+        .navbar a {
+            color: #B5E853;
+            text-decoration: none;
+            padding: 8px 15px;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #2c2c2c;
+        }
+        .content {
+            color: #B5E853;
+            padding: 20px;
+            margin: 150px 0;
+        }
+        .ascii {
+            font-size: 1.1vw;
+            /* text-align: center; */
+            margin-bottom: 0;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <a href="/">Home</a>
+            <a href="/flag">Flag</a>
+        </div>
+        <div>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <pre class="ascii">
+                                    _______              __                      ________          __                           
+                                    |       \            |  \                    |        \        |  \                          
+                                    | $$$$$$$\  ______  _| $$_     ______         \$$$$$$$$______  | $$   __   ______   _______  
+                                    | $$__/ $$ /      \|   $$ \   |      \          | $$  /      \ | $$  /  \ /      \ |       \ 
+                                    | $$    $$|  $$$$$$\\$$$$$$    \$$$$$$\         | $$ |  $$$$$$\| $$_/  $$|  $$$$$$\| $$$$$$$\
+                                    | $$$$$$$\| $$    $$ | $$ __  /      $$         | $$ | $$  | $$| $$   $$ | $$    $$| $$  | $$
+                                    | $$__/ $$| $$$$$$$$ | $$|  \|  $$$$$$$         | $$ | $$__/ $$| $$$$$$\ | $$$$$$$$| $$  | $$
+                                    | $$    $$ \$$     \  \$$  $$ \$$    $$         | $$  \$$    $$| $$  \$$\ \$$     \| $$  | $$
+                                     \$$$$$$$   \$$$$$$$   \$$$$   \$$$$$$$          \$$   \$$$$$$  \$$   \$$  \$$$$$$$ \$$   \$$            
+        </pre>
+        <p style="text-align:center;"><%- flag %></p>
+    </div>
+</body>
+</html>

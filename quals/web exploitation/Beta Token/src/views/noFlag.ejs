@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You are a beta male, Sonic</title>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            background-color: #151515;
+            font-family: 'Inter';
+            font-size: 22px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #151515;
+            color: white;
+            padding: 10px 20px;
+            height: 45px;
+            box-shadow: 0 4px 8px 0 rgba(91, 91, 91, 0.1), 0 6px 20px 0 rgba(147, 147, 147, 0.09);
+        }
+        .navbar a {
+            color: #B5E853;
+            text-decoration: none;
+            padding: 8px 15px;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #2c2c2c;
+        }
+        .content {
+            color: #B5E853;
+            padding: 20px;
+        }
+        .ascii {
+            color: #B5E853;
+            font-size: 1.1vw;
+            margin-bottom: 0;
+        }
+        img {
+            width: 40%;
+            height: auto;
+            margin: 0 0 0 50%;
+            transform: translate(-50%, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <a href="/">Home</a>
+            <a href="/flag">Flag</a>
+        </div>
+        <div>
+            <% if (loggedIn) { %>
+                <a href="/logout">Logout</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+            <% } %>
+        </div>
+    </div>
+    <div class="content">
+        <h1 style="text-align: center;">You are not ADMIN!</h1>
+    </div>
+    <img src="/img/not_sigma.jpg" alt="not sigma">
+</body>
+</html>
