@@ -9,8 +9,8 @@ def fill(num, length):
 with open("song.txt", "rb") as secret:
     song_list = secret.read().strip()
 
-now_playing = song_list[:5]
-next_queue = song_list[5:]
+now_playing = song_list[:11]
+next_queue = song_list[10:]
 
 song1 = int.from_bytes(now_playing, "big")
 song2 = int.from_bytes(next_queue, "big")
