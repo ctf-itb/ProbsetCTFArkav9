@@ -1,0 +1,22 @@
+name: "Wibu"
+category: reverse engineering
+description: |- 
+	Katanya di ITB banyak wibunya.
+
+	Author: **msfir**
+
+value: 1000
+type: dynamic
+extra:
+	initial: 1000
+	decay: 15
+	minimum: 100
+
+flags:
+	- ARKAV{sugoi_ne_kimi_wa}
+
+files:
+	- dist/chall
+
+state: visible
+version: "0.1"
