@@ -16,7 +16,7 @@ flags:
 	- ARKAV{sugoi_ne_kimi_wa}
 
 files:
-	- dist/chall
+	- dist/dist.zip
 
 state: visible
 version: "0.1"

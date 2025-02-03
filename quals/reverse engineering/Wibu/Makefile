@@ -36,7 +36,7 @@ flags:
 	- $(FLAG)
 
 files:
-	- dist/chall
+	- dist/dist.zip
 
 state: visible
 version: "0.1"
