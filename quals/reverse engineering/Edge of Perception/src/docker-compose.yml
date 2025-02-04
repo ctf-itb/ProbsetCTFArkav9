@@ -1,5 +1,5 @@
 services:
-    flagseeker:
+    edge-of-perception:
         build: .
         ports:
             - 2222:22

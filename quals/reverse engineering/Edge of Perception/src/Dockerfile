@@ -1,14 +1,14 @@
-FROM python:3.12.8-slim
+FROM python:3.12.8-alpine
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    openssh-server \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache openssh libc6-compat
 
-RUN mkdir -p -m0755 /var/run/sshd
+RUN mkdir -p -m 0755 /var/run/sshd
 
-RUN useradd -r ctf
-RUN passwd -d ctf
+RUN ssh-keygen -A
 
+RUN adduser -D ctf
+
+RUN passwd -u ctf
 
 RUN { \
     echo "Match User ctf"; \
@@ -24,13 +24,12 @@ RUN { \
     echo "PermitEmptyPasswords yes"; \
 } >> /etc/ssh/sshd_config
 
-
 COPY chall /app/chall
 RUN chmod +x /app/chall
 
 RUN { \
-    echo "#!/bin/bash"; \
-    echo "exec timeout --foreground 300 /app/chall"; \
+    echo "#!/bin/sh"; \
+    echo "exec timeout 300 /app/chall"; \
 } > /app/run.sh
 RUN chmod +x /app/run.sh
 
