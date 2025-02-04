@@ -105,7 +105,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     sess.set_tcp_stream(tcp);
     sess.handshake()?;
 
-    sess.userauth_password("ctf", "")?;
+    sess.userauth_password(
+        "4TAdcJskoyJ9ZVYlYDr5cCsY3ueyNljDAaCxl0slmARpclxRPNle6EG1GUAjsnl9Siy0ktk",
+        "8niRFzMctZvc9okrQ0cUFecn0bXM6",
+    )?;
     if !sess.authenticated() {
         eprintln!("Authentication failed");
         process::exit(1);
