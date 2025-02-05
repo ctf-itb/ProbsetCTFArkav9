@@ -1,9 +1,10 @@
 FLAG := $(shell cat src/flag.txt)
+OUTPUT := dist/dist.zip
 
 .PHONY: all
-all: dist/dist.zip challenge.yml
+all: $(OUTPUT) challenge.yml
 
-dist/dist.zip: src/wibufication.exs src/flag.txt
+$(OUTPUT): src/wibufication.exs src/flag.txt
 	@echo "[+] Compiling..."
 	@cd src
 	@elixirc wibufication.exs
@@ -36,7 +37,7 @@ flags:
 	- $(FLAG)
 
 files:
-	- dist/dist.zip
+	- $(OUTPUT)
 
 state: visible
 version: "0.1"
