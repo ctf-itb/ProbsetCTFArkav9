@@ -1,0 +1,10 @@
+version: '1'
+name: crypto-poly-dlog
+services:
+  read-around:
+    build: .
+    restart: on-failure
+    container_name: poly-dlog
+    read_only: false
+    ports:
+      - 8026:8010

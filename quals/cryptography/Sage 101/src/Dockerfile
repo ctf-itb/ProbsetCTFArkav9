@@ -1,0 +1,18 @@
+FROM sagemath/sagemath:latest
+
+RUN sudo apt-get update && sudo apt install -y socat
+
+RUN mkdir /home/sage/ctf
+
+COPY ./requirements.txt /home/sage/ctf
+RUN sage --pip install -r /home/sage/ctf/requirements.txt
+
+RUN mkdir /home/sage/ctf/src
+
+COPY ./chall.py /home/sage/ctf/src
+COPY ./run.sh /home/sage/ctf/src
+COPY ./flag.txt /home/sage/ctf/src
+
+WORKDIR /home/sage/ctf/src
+
+CMD ["sudo", "./run.sh"]
