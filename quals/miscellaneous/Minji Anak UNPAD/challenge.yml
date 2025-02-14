@@ -1,0 +1,37 @@
+name: "Minji Anak UNPAD"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: miscellaneous
+description: |- 
+    ???
+
+    Author: **w1ntr**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{mmm_hmm_wh4t's_y0ur_ET4?!}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - easy
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/chall.py
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
