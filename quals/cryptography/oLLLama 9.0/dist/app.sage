@@ -40,12 +40,10 @@ A2[shuffle2] = vector(ZZ, fill(song2, artists))
 
 h1 = x*A1
 h2 = y*A2
-queue1 = 9*p**2*q**2 + p*q**2 - 2*p*q
-queue2 = 2*p*q + 3*p
+params = pow(1337*p - 90*q, N - p - q, N)
 
 with open("output.txt", "w") as f:
     f.write(f"{N}\n")
-    f.write(f"{queue1}\n")
-    f.write(f"{queue2}\n")
+    f.write(f"{params}\n")
     f.write(f"{list(h1[0])}\n")
     f.write(f"{list(h2[0])}\n")
