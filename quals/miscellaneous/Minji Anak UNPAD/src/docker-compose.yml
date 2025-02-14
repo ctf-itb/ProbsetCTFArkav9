@@ -1,0 +1,7 @@
+version: '3'
+services:
+  unpad:
+    build: .
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
