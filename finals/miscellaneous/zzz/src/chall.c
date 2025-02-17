@@ -1,31 +1,33 @@
 #define _GNU_SOURCE
 
 #include <fcntl.h>
+#include <grp.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/resource.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
 #include <unistd.h>
 
 extern char **environ;
 
-#define MAX_SOURCE_SIZE (64 * 1024) // 64KB max source size
+#define MAX_SOURCE_SIZE (5 * 1024) // 5KB
 #define FORBIDDEN_COUNT 5
 const char *FORBIDDEN[FORBIDDEN_COUNT] = {"@import", "@cInclude", "@cImport", "@embedFile", "asm"};
 
 void set_limits()
 {
     struct rlimit limit;
-    limit.rlim_cur = 10;
-    limit.rlim_max = 10;
+    limit.rlim_cur = 3;
+    limit.rlim_max = 3;
     if (setrlimit(RLIMIT_CPU, &limit) < 0)
     {
         perror("setrlimit CPU");
     }
 
-    limit.rlim_cur = 64 * 1024 * 1024;
-    limit.rlim_max = 64 * 1024 * 1024;
+    limit.rlim_cur = 10 * 1024 * 1024;
+    limit.rlim_max = 10 * 1024 * 1024;
     if (setrlimit(RLIMIT_AS, &limit) < 0)
     {
         perror("setrlimit AS");
@@ -60,7 +62,7 @@ int main()
             break;
         if (len + strlen(line) >= MAX_SOURCE_SIZE)
         {
-            fprintf(stderr, "Your code is too large, what do you even write lol\n");
+            fprintf(stderr, "Your code is too large, what did you even write lol\n");
             return 1;
         }
         strcat(source, line);
@@ -79,6 +81,11 @@ int main()
     if (!temp_dir)
     {
         perror("mkdtemp");
+        return 1;
+    }
+    if (chmod(temp_dir, 0750) < 0)
+    {
+        perror("chmod");
         return 1;
     }
     char cleanup_cmd[512];
@@ -118,28 +125,37 @@ int main()
         return 1;
     }
 
-    pid_t run_pid = fork();
-    if (run_pid == 0)
+    int fd = open(bin_path, O_RDONLY);
+    if (fd < 0)
     {
-        int fd = open(bin_path, O_RDONLY);
-        if (fd < 0)
-        {
-            perror("open binary");
-            exit(1);
-        }
-
-        system(cleanup_cmd);
-
-        alarm(10);
-        set_limits();
-
-        printf("Running...\n");
-        char *const args[] = {"sol", NULL};
-        fexecve(fd, args, environ);
-        perror("fexecve");
-        exit(1);
+        perror("open binary");
+        return 1;
     }
 
-    waitpid(run_pid, NULL, 0);
+    system(cleanup_cmd);
+
+    alarm(30);
+    set_limits();
+
+    if (setgroups(0, NULL) < 0)
+    {
+        perror("setgroups");
+        return 1;
+    }
+    if (setregid(65534, 65534) < 0)
+    {
+        perror("setregid");
+        return 1;
+    }
+    if (setreuid(65534, 65534) < 0)
+    {
+        perror("setreuid");
+        return 1;
+    }
+
+    printf("Running...\n");
+    char *const args[] = {bin_path, NULL};
+    fexecve(fd, args, environ);
+
     return 0;
 }

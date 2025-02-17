@@ -13,11 +13,15 @@ $(OUTPUT): src/chall.c src/Dockerfile src/docker-compose.yml
 	@mkdir -p dist
 	@mv src/dist.zip $@
 
-deploy:
+src/chall: src/chall.c
 	@echo "[+] Compiling..."
 	@cd src
 	@gcc -o chall chall.c
+	@cd ..
+
+deploy: src/chall
 	@echo "[+] Deploying..."
+	@cd src
 	@docker compose -p zzz up -d --build
 	@cd ..
 

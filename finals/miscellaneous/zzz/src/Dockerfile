@@ -11,4 +11,4 @@ RUN chmod +x /usr/bin/socat
 
 WORKDIR /app
 
-CMD ["socat", "TCP-LISTEN:1337,reuseaddr,fork", "EXEC:/app/chall,stderr,pty,raw,echo=0,su=nobody"]
+CMD ["socat", "TCP-LISTEN:1337,reuseaddr,fork", "EXEC:/app/chall,stderr,pty,cfmakeraw"]
