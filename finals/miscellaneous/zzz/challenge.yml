@@ -1,0 +1,25 @@
+name: "zzz"
+category: miscellaneous
+description: |- 
+	Diliat-liat kayaknya Zig lagi naik daun nih.
+	Momen yang pas buat bikin jail-nya :D
+
+	Author: **msfir**
+
+value: 1000
+type: dynamic
+extra:
+	initial: 1000
+	decay: 15
+	minimum: 100
+
+connection_info: nc hostname 12000
+
+flags:
+	- ARKAV{bruh_is_this_even_a_jail_chall?_more_like_pwn_chall_ngl}
+
+files:
+	- dist/dist.zip
+
+state: visible
+version: "0.1"
