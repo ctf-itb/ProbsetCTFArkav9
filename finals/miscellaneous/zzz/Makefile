@@ -2,28 +2,20 @@ FLAG := $(shell cat src/flag.txt)
 OUTPUT := dist/dist.zip
 
 .PHONY: all
-all: $(OUTPUT) challenge.yml
-
-$(OUTPUT): src/chall.c src/Dockerfile src/docker-compose.yml 
-	@echo "[+] Packing..."
-	@cd src
-	@7z a dist.zip chall.c docker-compose.yml Dockerfile
-	@rm chall
-	@cd ..
-	@mkdir -p dist
-	@mv src/dist.zip $@
+all: src/chall $(OUTPUT) challenge.yml
 
 src/chall: src/chall.c
 	@echo "[+] Compiling..."
 	@cd src
 	@gcc -o chall chall.c
-	@cd ..
 
-deploy: src/chall
-	@echo "[+] Deploying..."
+$(OUTPUT): src/chall src/chall.c src/Dockerfile src/docker-compose.yml 
+	@echo "[+] Packing..."
 	@cd src
-	@docker compose -p zzz up -d --build
+	@7z a dist.zip chall chall.c docker-compose.yml Dockerfile
 	@cd ..
+	@mkdir -p dist
+	@mv src/dist.zip $@
 
 define CHALLENGE
 name: "zzz"
@@ -62,7 +54,7 @@ challenge.yml: src/flag.txt
 
 .PHONY: clean
 clean:
-	@rm -rf $(OUTPUT) challenge.yml
+	@rm -rf $(OUTPUT) src/chall challenge.yml
 	@echo "[+] Cleaned build artifacts"
 
 .PHONY: rebuild

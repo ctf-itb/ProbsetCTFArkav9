@@ -52,7 +52,7 @@ challenge.yml: src/flag.txt
 
 .PHONY: clean
 clean:
-	@rm -rf dist/dist.zip challenge.yml
+	@rm -rf $(OUTPUT) challenge.yml
 	@echo "[+] Cleaned build artifacts"
 
 .PHONY: rebuild

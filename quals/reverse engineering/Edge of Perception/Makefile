@@ -2,7 +2,7 @@ FLAG := $(shell cat src/flag.txt)
 OUTPUT := dist/dist.zip
 
 .PHONY: all
-all: $(OUTPUT) src/chall challenge.yml
+all: $(OUTPUT) src/chall src/client challenge.yml
 
 src/client: src/client_rust/src/main.rs
 	@echo "[+] Building client..."
@@ -96,7 +96,7 @@ challenge.yml: src/flag.txt
 
 .PHONY: clean
 clean:
-	@rm -rf dist/chall challenge.yml
+	@rm -rf $(OUTPUT) src/client src/chall challenge.yml
 	@echo "[+] Cleaned build artifacts"
 
 .PHONY: rebuild
