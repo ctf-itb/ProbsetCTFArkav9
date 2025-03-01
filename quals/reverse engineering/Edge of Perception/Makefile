@@ -20,7 +20,9 @@ $(OUTPUT): src/client src/chall.py.mako src/obfuscator.py
 	@cython --embed --directive language_level=3 -o chall.c chall.py
 	@gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
 	@rm -f chall.py chall.c
-	@7z a dist.zip chall client
+	@patchelf --set-rpath . chall
+	@7z a dist.zip chall client /lib/python3.12/config-3.12-x86_64-linux-gnu/libpython3.12.so
+	@7z rn dist.zip libpython3.12.so libpython3.12.so.1.0
 	@cd ..
 	@rm -rf dist
 	@mkdir -p dist

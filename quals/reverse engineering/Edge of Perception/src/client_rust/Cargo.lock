@@ -42,7 +42,6 @@ dependencies = [
  "libc",
  "nix",
  "ssh2",
- "termion",
 ]
 
 [[package]]
@@ -50,17 +49,6 @@ name = "libc"
 version = "0.2.169"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5aba8db14291edd000dfcc4d620c7ebfb122c613afb886ca8803fa4e128a20a"
-
-[[package]]
-name = "libredox"
-version = "0.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c0ff37bd590ca25063e35af745c343cb7a0271906fb7b37e4813e8f79f00268d"
-dependencies = [
- "bitflags",
- "libc",
- "redox_syscall",
-]
 
 [[package]]
 name = "libssh2-sys"
@@ -109,12 +97,6 @@ dependencies = [
  "cfg_aliases",
  "libc",
 ]
-
-[[package]]
-name = "numtoa"
-version = "0.2.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6aa2c4e539b869820a2b82e1aef6ff40aa85e65decdd5185e83fb4b1249cd00f"
 
 [[package]]
 name = "openssl-src"
@@ -177,12 +159,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "redox_termios"
-version = "0.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "20145670ba436b55d91fc92d25e71160fbfbdd57831631c8d7d36377a476f1cb"
-
-[[package]]
 name = "scopeguard"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -210,18 +186,6 @@ dependencies = [
  "libc",
  "libssh2-sys",
  "parking_lot",
-]
-
-[[package]]
-name = "termion"
-version = "4.0.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7eaa98560e51a2cf4f0bb884d8b2098a9ea11ecf3b7078e9c68242c74cc923a7"
-dependencies = [
- "libc",
- "libredox",
- "numtoa",
- "redox_termios",
 ]
 
 [[package]]
