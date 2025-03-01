@@ -1,5 +1,8 @@
+name: misc-zzz
 services:
-    zzz:
-        build: .
-        ports:
-            - 12000:1337
+  chall:
+    build: .
+    ports:
+      - 12000:1337
+    restart: always
+    container_name: chall

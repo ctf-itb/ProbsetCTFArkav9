@@ -1,5 +1,8 @@
+name: rev-edge-of-perception
 services:
-    edge-of-perception:
-        build: .
-        ports:
-            - 2222:22
+  chall:
+    build: .
+    ports:
+      - 12000:22
+    restart: on-failure
+    container_name: chall
