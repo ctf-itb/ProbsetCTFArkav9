@@ -1,0 +1,32 @@
+name: "Breathing Exercise"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: cryptography
+description: |- 
+    Apparently this prng scheme is backdoored by the NSA? Thankfully i can craft my own version safe from any government shenanigans.
+
+    Author: **Etynso**
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+connection_info: nc hostname XXXX
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{im_feeling_dizzy_now_from_all_these_twisting_thanks!!!!! T_T *_* (O)_(O) ^_^ UwU OwO EwE}
+
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/dist.zip
+
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
