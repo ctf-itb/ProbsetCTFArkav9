@@ -11,9 +11,10 @@ RUN mkdir /home/sage/ctf/src
 
 COPY ./chall.py /home/sage/ctf/src
 COPY ./bn350.py /home/sage/ctf/src
+COPY ./flag.txt /home/sage/ctf/src
 COPY ./run.sh /home/sage/ctf/src
 RUN sudo chmod +x /home/sage/ctf/src/run.sh
 
 WORKDIR /home/sage/ctf/src
 
-CMD ["sudo ./run.sh"]
+CMD ["./run.sh"]

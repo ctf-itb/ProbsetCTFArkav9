@@ -7,5 +7,3 @@ services:
     read_only: false
     ports:
       - 13750:13750
-    environment:
-      - FLAG=ARKAV{im_feeling_dizzy_now_from_all_these_twisting_thanks!!!!! T_T *_* (O)_(O) ^_^ UwU OwO EwE}

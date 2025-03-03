@@ -5,7 +5,7 @@ import json
 import signal
 import os
 
-FLAG = os.environ.get("FLAG", 'ARKAV{REDACTED}')
+FLAG = open('flag.txt', 'r').read()
 
 class RNG:
     def __init__(self, seed, P, Q):
@@ -62,7 +62,7 @@ def main() :
         print(f"You earned this {FLAG}")
 
 if __name__ == "__main__" :
-    signal.alarm(45)
+    signal.alarm(60)
     try :
         main()
     except Exception as e :
