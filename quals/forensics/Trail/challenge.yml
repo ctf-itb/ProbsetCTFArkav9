@@ -1,0 +1,37 @@
+name: "Trail"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: forensics
+description: |- 
+    It's been a month since I lost my fiancé, and I am deeply grateful to you for investigating and providing me with the chronology of events. It seems that God has answered my prayers. According to the police report, the criminal organization was actually in conflict with another group called Stan. Stan successfully carried out a phishing campaign against them. This morning, I received news that the police managed to arrest the broker responsible for launching the phishing campaign and successfully obtained network traffic data from his computer. While it's unlikely that this case will lead me to my fiancé, I can't help but hold on to a sliver of hope.
+
+    Author: **Mizuhara Chizuru**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{n0w_y0u_kn0w_where_y0u're_g0ing_huh?}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - medium
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/Trail.zip
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
