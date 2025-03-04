@@ -5,4 +5,4 @@ services:
     ports:
       - 12000:22
     restart: on-failure
-    container_name: chall
+    container_name: edge-of-perception
