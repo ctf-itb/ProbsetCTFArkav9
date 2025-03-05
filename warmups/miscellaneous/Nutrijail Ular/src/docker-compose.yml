@@ -1,0 +1,10 @@
+version: '3'
+services:
+  challenge:
+    image: nutrijail:latest
+    build: .
+    ports:
+      - "8010:1337"
+    container_name: nutrijail
+    user: chall
+    command: socat TCP-LISTEN:1337,reuseaddr,fork EXEC:"python /home/chall/app.py"

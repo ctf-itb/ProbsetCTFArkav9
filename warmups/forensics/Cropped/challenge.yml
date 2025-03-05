@@ -1,0 +1,37 @@
+name: "Cropped"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: miscellaneous
+description: |- 
+    A strange person sent me a gift on WhatsApp. He said that you should try to open the cropped part. Can you restore it?
+
+    Author: **dovodedomo**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 15
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{kiri_kanan_L1_L2_R1_R2_atas_bawah_kiri_kanan}
+
+# Tags are used to provide additional public tagging to a challenge
+tags:
+    - super baby
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/app.py
+
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"

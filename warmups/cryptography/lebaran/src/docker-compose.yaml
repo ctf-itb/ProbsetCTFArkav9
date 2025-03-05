@@ -1,0 +1,9 @@
+services:
+  challenge:
+    image: lebaran:latest
+    build: .
+    ports:
+      - "8011:1337"
+    container_name: lebaran
+    user: chall
+    command: socat TCP-LISTEN:1337,reuseaddr,fork EXEC:"python /home/chall/app.py"
