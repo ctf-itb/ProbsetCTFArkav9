@@ -39,7 +39,7 @@ flags:
 files:
 	- $(OUTPUT)
 
-state: visible
+state: hidden
 version: "0.1"
 endef
 
