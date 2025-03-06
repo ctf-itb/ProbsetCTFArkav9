@@ -4,7 +4,7 @@ services:
     image: nutrijail:latest
     build: .
     ports:
-      - "8010:1337"
+      - "8098:8098"
     container_name: nutrijail
     user: chall
-    command: socat TCP-LISTEN:1337,reuseaddr,fork EXEC:"python /home/chall/app.py"
+    command: socat TCP-LISTEN:8098,reuseaddr,fork EXEC:"python /home/chall/app.py"
