@@ -3,7 +3,31 @@ url = https://ctf.arkavidia.com
 access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed9cba
 
 [challenges]
-warmups/miscellaneous/Nutrijail Ular = warmups/miscellaneous/Nutrijail Ular
-warmups/web exploitation/Magic Shop = warmups/web exploitation/Magic Shop
-warmups/cryptography/lebaran = warmups/cryptography/lebaran
-warmups/forensics/Cropped = warmups/forensics/Cropped
+./finals/cryptography/Breathing Exercise = ./finals/cryptography/Breathing Exercise
+./finals/binary exploitation/Impossible Roulette = ./finals/binary exploitation/Impossible Roulette
+./finals/reverse engineering/Python with Extra Spices = ./finals/reverse engineering/Python with Extra Spices
+./finals/miscellaneous/zzz = ./finals/miscellaneous/zzz
+./quals/forensics/Trail = ./quals/forensics/Trail
+./quals/forensics/lollipop = ./quals/forensics/lollipop
+./quals/forensics/bzip2 of death = ./quals/forensics/bzip2 of death
+./quals/forensics/Missing = ./quals/forensics/Missing
+./quals/cryptography/Enter The Arena = ./quals/cryptography/Enter The Arena
+./quals/cryptography/Sage 101 = ./quals/cryptography/Sage 101
+./quals/cryptography/oLLLama 9.0 = ./quals/cryptography/oLLLama 9.0
+./quals/web exploitation/Calculator of Special People = ./quals/web exploitation/Calculator of Special People
+./quals/web exploitation/Beta Token = ./quals/web exploitation/Beta Token
+./quals/binary exploitation/WWW 0 = ./quals/binary exploitation/WWW 0
+./quals/binary exploitation/KV = ./quals/binary exploitation/KV
+./quals/binary exploitation/Fortune's Tale = ./quals/binary exploitation/Fortune's Tale
+./quals/reverse engineering/Wibu = ./quals/reverse engineering/Wibu
+./quals/reverse engineering/Edge of Perception = ./quals/reverse engineering/Edge of Perception
+./quals/a template/copy this = ./quals/a template/copy this
+./quals/miscellaneous/Minji Anak UNPAD = ./quals/miscellaneous/Minji Anak UNPAD
+./quals/miscellaneous/beat frendy = ./quals/miscellaneous/beat frendy
+./quals/miscellaneous/abstract art = ./quals/miscellaneous/abstract art
+./quals/miscellaneous/The 1000th Regrexor = ./quals/miscellaneous/The 1000th Regrexor
+./warmups/forensics/Cropped = ./warmups/forensics/Cropped
+./warmups/cryptography/lebaran = ./warmups/cryptography/lebaran
+./warmups/web exploitation/Magic Shop = ./warmups/web exploitation/Magic Shop
+./warmups/miscellaneous/Nutrijail Ular = ./warmups/miscellaneous/Nutrijail Ular
+
