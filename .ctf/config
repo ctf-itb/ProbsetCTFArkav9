@@ -1,6 +1,9 @@
 [config]
-url = 
-access_token = 
+url = https://ctf.arkavidia.com
+access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed9cba
 
 [challenges]
-
+warmups/miscellaneous/Nutrijail Ular = warmups/miscellaneous/Nutrijail Ular
+warmups/web exploitation/Magic Shop = warmups/web exploitation/Magic Shop
+warmups/cryptography/lebaran = warmups/cryptography/lebaran
+warmups/forensics/Cropped = warmups/forensics/Cropped

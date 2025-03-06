@@ -28,7 +28,7 @@ tags:
 
 # Provide paths to files from the same directory that this file is in
 files:
-    - dist/app.py
+    - dist/cropped.png
 
 # If provided, the field can take one of two values: hidden, visible.
 state: hidden

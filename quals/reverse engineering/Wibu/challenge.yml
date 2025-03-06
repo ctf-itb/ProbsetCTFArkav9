@@ -1,22 +1,22 @@
 name: "Wibu"
 category: reverse engineering
 description: |- 
-	Katanya di ITB banyak wibunya.
+    Katanya di ITB banyak wibunya.
 
-	Author: **msfir**
+    Author: **msfir**
 
 value: 1000
 type: dynamic
 extra:
-	initial: 1000
-	decay: 25
-	minimum: 100
+    initial: 1000
+    decay: 25
+    minimum: 100
 
 flags:
-	- ARKAV{sugoi_ne_kimi_wa}
+    - ARKAV{sugoi_ne_kimi_wa}
 
 files:
-	- dist/dist.zip
+    - dist/dist.zip
 
 state: hidden
 version: "0.1"
