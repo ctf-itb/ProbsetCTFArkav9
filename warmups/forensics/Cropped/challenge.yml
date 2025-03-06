@@ -1,7 +1,7 @@
 name: "Cropped"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
-category: miscellaneous
+category: forensics
 description: |- 
     A strange person sent me a gift on WhatsApp. He said that you should try to open the cropped part. Can you restore it?
 
