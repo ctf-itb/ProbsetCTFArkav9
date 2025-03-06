@@ -5,17 +5,17 @@ OUTPUT := dist/dist.zip
 all: src/chall $(OUTPUT) challenge.yml
 
 src/chall: src/chall.c
-    @echo "[+] Compiling..."
-    @cd src
-    @gcc -o chall chall.c
+	@echo "[+] Compiling..."
+	@cd src
+	@gcc -o chall chall.c
 
 $(OUTPUT): src/chall src/chall.c src/Dockerfile src/docker-compose.yml 
-    @echo "[+] Packing..."
-    @cd src
-    @7z a dist.zip chall chall.c docker-compose.yml Dockerfile
-    @cd ..
-    @mkdir -p dist
-    @mv src/dist.zip $@
+	@echo "[+] Packing..."
+	@cd src
+	@7z a dist.zip chall chall.c docker-compose.yml Dockerfile
+	@cd ..
+	@mkdir -p dist
+	@mv src/dist.zip $@
 
 define CHALLENGE
 name: "zzz"
@@ -49,13 +49,13 @@ export CHALLENGE
 
 .ONESHELL:
 challenge.yml: src/flag.txt
-    @echo "[+] Generating challenge.yml..."
-    @echo "$$CHALLENGE" > challenge.yml
+	@echo "[+] Generating challenge.yml..."
+	@echo "$$CHALLENGE" > challenge.yml
 
 .PHONY: clean
 clean:
-    @rm -rf $(OUTPUT) src/chall challenge.yml
-    @echo "[+] Cleaned build artifacts"
+	@rm -rf $(OUTPUT) src/chall challenge.yml
+	@echo "[+] Cleaned build artifacts"
 
 .PHONY: rebuild
 rebuild: clean all
