@@ -1,0 +1,30 @@
+name: Sync challs to ctfd
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+jobs:
+  install_challs:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Run script file
+      run: |
+        python3 -m pip install ctfcli
+         chmod +x ./install.sh
+         ./install.sh
+      shell: bash
+  sync_challs:
+    needs: install_challs
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+        python3 -m pip install ctfcli
+         chmod +x ./sync.sh
+         ./sync.sh
+      shell: bash
