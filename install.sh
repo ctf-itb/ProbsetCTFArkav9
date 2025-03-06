@@ -8,7 +8,6 @@ do
     fi
     dir="$(dirname "${name}")"
     echo "Found $dir"
-    python3 -m ctfcli challenge add "$dir"
     python3 -m ctfcli challenge install "$dir"
 done
 echo "Installing done"
