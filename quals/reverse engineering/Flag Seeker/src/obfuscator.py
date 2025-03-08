@@ -71,7 +71,7 @@ if __name__ == "__main__":
     obfuscator = Obfuscator()
     obfuscator.visit(tree)
 
-    random.seed("𝒙")
+    random.seed("arkavidia9")
     shuffled = list(range(len(obfuscator.constants)))
     random.shuffle(shuffled)
 
