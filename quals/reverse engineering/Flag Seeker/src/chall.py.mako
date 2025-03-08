@@ -3,6 +3,7 @@
 import fcntl
 import os
 import random
+import re
 import selectors
 import signal
 import struct
@@ -133,8 +134,8 @@ def handle_input():
         player = player[0] - 1, player[1]
     elif key == "right":
         player = player[0] + 1, player[1]
-    elif key.startswith("\x1b[8"):
-        _, rows, cols = key.split(";")
+    elif match := re.match(r"\x1b\[8;(\d+);(\d+)t", key):
+        rows, cols = match.groups()
         set_terminal_size(int(rows), int(cols))
     else:
         return False

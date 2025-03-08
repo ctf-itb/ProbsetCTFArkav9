@@ -35,7 +35,7 @@ def sigwinch_handler(signum, frame):
     rows, cols = get_terminal_size()
     # Construct the resize sequence. Note: no trailing "t" so that when the server splits
     # the sequence (e.g. b"\x1b[8;80;200"), int conversion works.
-    resize_seq = f"\x1b[8;{rows};{cols}"
+    resize_seq = f"\x1b[8;{rows};{cols}t"
     try:
         client_socket.send(resize_seq.encode())
     except Exception:
