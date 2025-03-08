@@ -1,9 +1,7 @@
 services:
   challenge:
-    image: lebaran:latest
     build: .
     ports:
       - "8099:8099"
-    container_name: lebaran
     user: chall
     command: socat TCP-LISTEN:8099,reuseaddr,fork EXEC:"python /home/chall/app.py"
