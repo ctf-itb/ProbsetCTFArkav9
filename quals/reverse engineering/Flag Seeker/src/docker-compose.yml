@@ -1,0 +1,8 @@
+name: rev-flag-seeker
+services:
+  chall:
+    build: .
+    ports:
+      - 8700:1337
+    restart: on-failure
+    container_name: flag-seeker
