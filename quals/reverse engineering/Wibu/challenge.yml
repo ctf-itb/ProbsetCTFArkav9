@@ -13,7 +13,7 @@ extra:
     minimum: 100
 
 flags:
-    - ARKAV{sugoi_ne_kimi_wa}
+    - ARKAV{apa_anime/manga/novel_favorit_kamu?}
 
 files:
     - dist/dist.zip

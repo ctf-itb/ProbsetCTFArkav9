@@ -46,7 +46,7 @@ endef
 export CHALLENGE
 
 .ONESHELL:
-challenge.yml: src/flag.txt
+challenge.yml: Makefile src/flag.txt
 	@echo "[+] Generating challenge.yml..."
 	@echo "$$CHALLENGE" > challenge.yml
 
