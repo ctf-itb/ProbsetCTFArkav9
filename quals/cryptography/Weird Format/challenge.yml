@@ -1,4 +1,4 @@
-name: "Enter The Arena"
+name: "Weird Format"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: cryptography
@@ -25,7 +25,6 @@ tags:
 # Provide paths to files from the same directory that this file is in
 files:
     - dist/chall.py
-    - dist/output.txt
 
 # If provided, the field can take one of two values: hidden, visible.
 state: hidden

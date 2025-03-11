@@ -1,0 +1,9 @@
+name: 'cry-fermat'
+services:
+  fermaa:
+    build: .
+    restart: on-failure
+    container_name: fermaaa
+    read_only: false
+    ports:
+      - 8555:8555
