@@ -1,0 +1,24 @@
+name: "pyrev"
+category: reverse engineering
+description: |- 
+    Your average baby python reversing chall, and it's not even .pyc!
+
+    note: tested on linux, running on windows might give different results
+
+    Author: **Etynso**
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 25
+    minimum: 100
+
+flags:
+    - ARKAV{its_just_python_riiiiggghhhhhhtttttt????????}
+
+files:
+    - dist/dist.zip
+
+state: hidden
+version: "0.1"
