@@ -1,11 +1,14 @@
-from sage.all import EllipticCurve, GF
+from sage.all import EllipticCurve, GF, proof
 from Crypto.Random import random
-from bn350 import p, G, N
 import json
 import signal
-import os
+
+proof.all(False)
 
 FLAG = open('flag.txt', 'r').read()
+
+N = 224
+p = 0xffffffffffffffffffffffffffffffff000000000000000000000001
 
 class RNG:
     def __init__(self, seed, P, Q):
@@ -18,20 +21,28 @@ class RNG:
         s = (t * self.P).x()
         self.seed = s
         r = (s * self.Q).x()
-        return int(r) >> 16
-    
+
+        return (int(r)) >> 16
+        
 send = lambda x : print(json.dumps(x))
 recv = lambda : json.loads(input())
 
 def main() :
     oxygen = 50
-    b2 = random.randint(2**(N - 1), p)
+    a1 = random.randint(2**(N - 1), p)
+    b1 = random.randint(2**(N - 1), p)
+    a2 = random.randint(2**(N - 1), p)
     F = GF(p)
-    E2 = EllipticCurve(F, [0, b2])
+    E1 = EllipticCurve(F, [a1, b1])
+    
+    G = E1.gens()[0]
 
     print("We're gonna do a breathing exercise okay! When i breathe you breathe!")
-    send({"msg" : "Send your Point!", "b" : b2})
+    send({"msg" : "Send b2 and a point on E2!", "a1" : a1, "b1" : b1, "a2" : a2, "Gx" : int(G.x()), "Gy" : int(G.y())})
     response = recv()
+
+    b2 = response['b2']
+    E2 = EllipticCurve(F, [a2, b2])
 
     Q = E2([response['x'], response['y']])
 
@@ -45,14 +56,14 @@ def main() :
         response = recv()
         
         if response['volume'] > volume :
+            send({"msg" : "you're breathing too heavily", "volume" : volume})
             oxygen -= 10
-            send({"msg" : "you're breathing too heavily", "volume" : volume, "oxygen" : oxygen})
         elif response['volume'] < volume :
+            send({"msg" : "you're breathing too lightly", "volume" : volume})
             oxygen -= 10
-            send({"msg" : "you're breathing too lightly", "volume" : volume, "oxygen" : oxygen})
         elif response['volume'] == volume :
+            send({"msg" : "Great, do more", "volume" : volume})
             oxygen += 3
-            send({"msg" : "Great, do more", "volume" : volume, "oxygen" : oxygen})
 
     if oxygen <= 0 :
         print("You fainted")

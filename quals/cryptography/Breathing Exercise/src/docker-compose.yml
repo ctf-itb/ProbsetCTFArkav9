@@ -1,0 +1,9 @@
+name: crypto-ah-ah-aaa
+services:
+  breathing-exercise:
+    build: .
+    restart: on-failure
+    container_name: ah-ah-aaa
+    read_only: false
+    ports:
+      - 8666:8666
