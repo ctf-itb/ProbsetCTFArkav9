@@ -71,7 +71,7 @@ class Challenge:
 
 async def main():
     host = socket.gethostbyname(socket.gethostname())
-    port = 9090
+    port = 8090
 
     server = await asyncio.start_server(
         Challenge().handle_request, host, port

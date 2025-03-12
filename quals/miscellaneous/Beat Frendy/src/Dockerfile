@@ -12,10 +12,10 @@ RUN wget https://github.com/official-stockfish/Stockfish/releases/latest/downloa
 WORKDIR /app
 
 COPY chall.py .
-COPY solver.py .
+# COPY solver.py .
 
 RUN pip install --no-cache-dir chess
 
-EXPOSE 3000
+EXPOSE 8091
 
 CMD ["python", "-u", "chall.py"]

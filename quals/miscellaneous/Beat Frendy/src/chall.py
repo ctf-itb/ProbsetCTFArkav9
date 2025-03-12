@@ -4,8 +4,8 @@ import random
 import socket
 
 STOCKFISH_PATH = "/stockfish/stockfish-ubuntu-x86-64-avx2"
-HOST = "127.0.0.1"
-PORT = 3000
+HOST = "0.0.0.0"
+PORT = 8091
 
 def print_board(board):
     return str(board)

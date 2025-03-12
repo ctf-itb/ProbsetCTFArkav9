@@ -1,4 +1,4 @@
-name: crypto-ah-ah-aaa
+name: cry-breathing
 services:
   breathing-exercise:
     build: .

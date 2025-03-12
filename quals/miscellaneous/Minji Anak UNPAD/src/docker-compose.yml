@@ -1,7 +1,8 @@
 version: '3'
+name: misc-minji-unpad
 services:
   unpad:
     build: .
     ports:
-      - "9090:9090"
+      - "8090:8090"
     restart: unless-stopped

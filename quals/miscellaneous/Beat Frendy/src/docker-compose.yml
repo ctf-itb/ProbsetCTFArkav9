@@ -1,6 +1,7 @@
+name: misc-beat-frendy
 services:
   chall:
-    restart: always
+    restart: unless-stopped
     build: .
     ports:
-      - "3000:3000"
+      - "8091:8091"

@@ -5,7 +5,7 @@ category: forensics
 description: |- 
     🚨❗ **WARNING: This file isn't your average archive—it's a zip bomb! If you extract it carelessly, you risk overwhelming your storage, freezing your system, or even triggering a DoS attack.** 🚨❗
 
-    Someone wanted to keep their message secret at all costs, locking it inside this zip bomb. If you attempt to decompress it, you might end up waiting for hours, days, or even forever. Trying to open it the usual way could cause you to run out of space before you even get close. We're talking about terabytes (1000 GB), petabytes (1.000.000 GB), or even zettabytes (1.000.000.000 GB) of data that could overwhelm your system. But every bomb has a weak spot, right? Can you recover the hidden message without triggering disaster?
+    Someone wanted to keep their message secret at all costs, locking it inside this zip bomb. If you attempt to decompress it, you might end up waiting for hours, days, or even forever. Trying to open it the usual way could cause you to run out of space before you even get close. We're talking about terabytes (1000 GB), petabytes (1.000.000 GB), or even zettabytes (1.000.000.000 GB) of data that could overwhelm your system. But every bomb has a weak spot, right? Can you extract the file without triggering disaster?
 
     Author: **dovodedomo**
 

@@ -14,13 +14,15 @@ extra:
     decay: 30
     minimum: 100
 
+connection_info: nc 20.195.43.216 8555
+
 flags:
     # A static case sensitive flag
     - ARKAV{EZZZZ_f3rm47_t0_g3t_5t4rt3d_VROOM_VROOM!!!!!!}
 
 # Tags are used to provide additional public tagging to a challenge
 tags:
-    - beginner
+    - baby
 
 # Provide paths to files from the same directory that this file is in
 files:

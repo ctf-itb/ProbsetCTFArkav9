@@ -6,6 +6,6 @@ COPY vrl.py /app/vrl.py
 
 RUN pip install --no-cache-dir --upgrade pip
 
-EXPOSE 9090
+EXPOSE 8090
 
 CMD ["python", "/app/vrl.py"]
