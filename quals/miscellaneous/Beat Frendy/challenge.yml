@@ -3,7 +3,7 @@ name: "beat frendy"
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: miscellaneous
 description: |- 
-    Beat me.
+    Beat me using g2g4 opening.
 
     ![magnus](https://images.chesscomfiles.com/uploads/v1/news/1274649.02ee5022.668x375o.cd10cc2c7bb7@2x.png)
 
@@ -22,7 +22,7 @@ connection_info: nc 20.195.43.216 8091 # or "https://example.com", remove if unu
 
 flags:
     # A static case sensitive flag
-    - ARKAV{ampun_sepuh_catur_👑}
+    - ARKAV{hanya_sepuh_yang_berani_make_opening_g2-g4}
 
 # Tags are used to provide additional public tagging to a challenge
 tags:

@@ -1,76 +1,93 @@
 import chess
 import chess.engine
-import random
-import socket
+import signal
+import sys
 
 STOCKFISH_PATH = "/stockfish/stockfish-ubuntu-x86-64-avx2"
-HOST = "0.0.0.0"
-PORT = 8091
+
+class TimeoutException(Exception):
+    pass
+
+def handler(signum, frame):
+    raise TimeoutException
+
+def start_timer(timeout_seconds):
+    signal.signal(signal.SIGALRM, handler)
+    signal.alarm(timeout_seconds)
+
 
 def print_board(board):
     return str(board)
 
-def get_user_move(board, conn):
+def get_user_move(board, is_first_move):
     while True:
+        timeout_seconds = 5
+        start_timer(timeout_seconds)
+
         try:
-            move = conn.recv(1024).decode().strip()
+            move = input("Your move (e.g., e2e4): ").strip()
+
+            if is_first_move and move != "g2g4":
+                print("Your first move must be g2g4!\n")
+                continue
+
             if chess.Move.from_uci(move) in board.legal_moves:
                 return chess.Move.from_uci(move)
             else:
-                conn.send("Invalid move!\n".encode())
+                print("Invalid move!\n")
+        except TimeoutException:
+            print("\nDon't think too long.. bang..")
+            sys.exit(1)
         except Exception as e:
-            conn.send("Invalid input format.\n".encode())
+            print("Invalid input format.\n")
+        finally:
+            signal.alarm(0)
 
 def get_stockfish_move(board, engine):
     result = engine.play(board, chess.engine.Limit(time=2.0))
     return result.move
 
-def start_server():
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind((HOST, PORT))
-        s.listen()
-        print(f"Server started on {HOST}:{PORT}. Waiting for connections...")
-        conn, addr = s.accept()
-        with conn:
-            print(f"Connected by {addr}")
-            board = chess.Board()
+def play_game():
+    board = chess.Board()
+    is_first_move = True
 
-            with chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH) as engine:
-                engine.configure({"Skill Level": 17})
 
-                conn.send("Welcome to Chess! You are playing as White. Beat our Frendy!\n".encode())
-                
-                while not board.is_game_over():
-                    board_str = print_board(board)
-                    conn.send(f"\nBoard:\n{board_str}\n".encode())
+    with chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH) as engine:
+        engine.configure({"Skill Level": 15})
 
-                    if board.turn == chess.WHITE:
-                        conn.send("Your move (e.g., e2e4): ".encode())
-                        move = get_user_move(board, conn)
-                        board.push(move)
-                    
-                    else:
-                        conn.send("Frendy is thinking...\n".encode())
-                        move = get_stockfish_move(board, engine)
-                        conn.send(f"Frendy plays: {move}\n".encode())
-                        board.push(move)
+        print("Welcome to Chess! You are playing as White. Beat our Frendy!")
+        
+        while not board.is_game_over():
+            board_str = print_board(board)
+            print(f"\nBoard:\n{board_str}\n")
 
-                board_str = print_board(board)
-                conn.send(f"Game Over!\n{board_str}\n".encode())
+            if board.turn == chess.WHITE:
+                move = get_user_move(board, is_first_move)
+                is_first_move = False
+                board.push(move)
+            
+            else:
+                print("Frendy is thinking...\n")
+                move = get_stockfish_move(board, engine)
+                print(f"Frendy plays: {move}\n")
+                board.push(move)
 
-                if board.is_checkmate():
-                    if board.turn == chess.WHITE:
-                        conn.send("Frendy wins!\n".encode())
-                    else:
-                        conn.send("You win!\nHere's the reward: ARKAV{ampun_sepuh_catur_👑}\n".encode())
-                elif board.is_stalemate():
-                    conn.send("It's a stalemate!\n".encode())
-                elif board.is_insufficient_material():
-                    conn.send("Insufficient material for checkmate!\n".encode())
-                elif board.is_variant_draw():
-                    conn.send("Draw!\n".encode())
-                else:
-                    conn.send(board.outcome().result().upper() + "\n".encode())
+        board_str = print_board(board)
+        print(f"Game Over!\n{board_str}\n")
+
+        if board.is_checkmate():
+            if board.turn == chess.WHITE:
+                print("Frendy wins!\n")
+            else:
+                print("You win!\nHere's the reward: ARKAV{hanya_sepuh_yang_berani_make_opening_g2-g4}\n")
+        elif board.is_stalemate():
+            print("It's a stalemate!\n")
+        elif board.is_insufficient_material():
+            print("Insufficient material for checkmate!\n")
+        elif board.is_variant_draw():
+            print("Draw!\n")
+        else:
+            print(board.outcome().result().upper() + "\n")
 
 if __name__ == "__main__":
-    start_server()
+    play_game()

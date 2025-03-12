@@ -2,6 +2,7 @@ FROM python:3.9-slim
 
 RUN apt-get update && apt-get install -y \
     wget \
+    socat \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
@@ -12,10 +13,9 @@ RUN wget https://github.com/official-stockfish/Stockfish/releases/latest/downloa
 WORKDIR /app
 
 COPY chall.py .
-# COPY solver.py .
 
 RUN pip install --no-cache-dir chess
 
-EXPOSE 8091
+EXPOSE 1337
 
-CMD ["python", "-u", "chall.py"]
+ENTRYPOINT ["socat", "TCP-LISTEN:1337,reuseaddr,fork,nodelay,su=nobody", "EXEC:'timeout 200 python3 chall.py'"]
