@@ -26,7 +26,7 @@ description: |-
 
     Author: **msfir**
 
-value: 1000
+value: 500
 type: dynamic
 extra:
     initial: 500

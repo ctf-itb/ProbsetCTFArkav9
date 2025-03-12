@@ -5,7 +5,6 @@ access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed
 [challenges]
 ./finals/cryptography/Breathing Exercise = ./finals/cryptography/Breathing Exercise
 ./finals/binary exploitation/Impossible Roulette = ./finals/binary exploitation/Impossible Roulette
-./finals/reverse engineering/Python with Extra Spices = ./finals/reverse engineering/Python with Extra Spices
 ./finals/miscellaneous/zzz = ./finals/miscellaneous/zzz
 ./quals/binary exploitation/WWW 0 = ./quals/binary exploitation/WWW 0
 ./quals/binary exploitation/KV = ./quals/binary exploitation/KV
