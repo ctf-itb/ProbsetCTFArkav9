@@ -1,4 +1,4 @@
-name: "pyrev"
+name: "Pyrev"
 category: reverse engineering
 description: |- 
     Your average baby python reversing chall, and it's not even .pyc!
@@ -18,7 +18,7 @@ flags:
     - ARKAV{its_just_python_riiiiggghhhhhhtttttt????????}
 
 files:
-    - dist/dist.zip
+    - dist/chall.py
 
 state: hidden
 version: "0.1"
