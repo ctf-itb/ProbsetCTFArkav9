@@ -29,8 +29,8 @@ description: |-
 value: 1000
 type: dynamic
 extra:
-    initial: 1000
-    decay: 25
+    initial: 500
+    decay: 30
     minimum: 100
 
 connection_info: nc hostname 12000
