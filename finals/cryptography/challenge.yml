@@ -18,7 +18,7 @@ connection_info: nc 20.195.43.216 8042
 
 flags:
     # A static case sensitive flag
-    - ARKAV{three_strategist_meta_Is_fuking_broken_b5671f7a7cf5cef803c6c28992bb7042}
+    - ARKAV{the_hardest_part_of_computer_science_is_naming_variables_challs_and_flags_9e2bf30ae454ab36}
 
 
 # Provide paths to files from the same directory that this file is in
