@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            Tab Tabi Tab
+        </title>
+        <link rel="stylesheet" href="{{url_for('static', filename='bootstrap.min.css')}}">
+    </head>
+    <style>
+        body{
+            color: #000;
+            background-image: linear-gradient(to right, rgb(72, 230, 255), rgb(146, 116, 255), rgb(193, 89, 216));
+            font-family: Arial;
+        }
+        #arkav {
+            background-image: linear-gradient(to right, rgb(72, 230, 255), rgb(146, 116, 255), rgb(193, 89, 216));
+            color: transparent;
+            background-clip: text;          
+          }
+    </style>
+    <body>
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <div id="arkav" class="h1 fw-bold text-center mb-0">
+                        Tab Tabi Tab
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }}" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

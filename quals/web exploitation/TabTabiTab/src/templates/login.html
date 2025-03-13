@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form method="post" class="mb-0" action="login" onsubmit="encodeBase64()">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input id="username" class="form-control" placeholder="tabtabitabcat" name="username">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" class="form-control"  placeholder="tabtabtab" name="password" type="password">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="captcha" class="form-label">Captcha:</label>
+                    <img src="{{ url_for('captcha_image') }}" alt="Captcha">
+                    <input id="captcha" class="form-control"  placeholder="...." name="captcha" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <button class="btn btn-success" type="submit" value="Login">Login</button>
+        </div>
+    </form>
+    <script>
+        function encodeBase64() {
+            let userInput = document.getElementById("username");
+            let passInput = document.getElementById("password");
+            userInput.value = btoa(userInput.value);
+            passInput.value = btoa(passInput.value);
+        }
+    </script>
+{% endblock %}
