@@ -1,0 +1,32 @@
+name: "--python"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: cryptography
+description: |- 
+    amimir
+
+attribution: azuketto
+
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 30
+    minimum: 100
+
+connection_info: nc 20.195.43.216 8042
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{three_strategist_meta_Is_fuking_broken_b5671f7a7cf5cef803c6c28992bb7042}
+
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/chall.py
+
+# If provided, the field can take one of two values: hidden, visible.
+state: hidden
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"

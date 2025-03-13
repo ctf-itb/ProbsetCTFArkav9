@@ -1,0 +1,10 @@
+version: '1'
+name: 'crypto-gw-mc'
+services:
+  read-around:
+    build: .
+    restart: on-failure
+    container_name: gw-mc
+    read_only: true
+    ports:
+      - 8042:8010
