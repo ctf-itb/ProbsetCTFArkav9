@@ -1,0 +1,7 @@
+services:
+  chall:
+    build: .
+    restart: on-failure
+    read_only: true
+    ports:
+      - 8101:8101
