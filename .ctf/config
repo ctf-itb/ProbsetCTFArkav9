@@ -34,3 +34,5 @@ access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed
 ./finals/cryptography/--python = ./finals/cryptography/--python
 ./finals/binary exploitation/Impossible Roulette = ./finals/binary exploitation/Impossible Roulette
 ./finals/miscellaneous/zzz = ./finals/miscellaneous/zzz
+./quals/cryptography/oLLLama 9.0 = ./quals/cryptography/oLLLama 9.0
+./quals/miscellaneous/The 1000th Regrexor = ./quals/miscellaneous/The 1000th Regrexor
