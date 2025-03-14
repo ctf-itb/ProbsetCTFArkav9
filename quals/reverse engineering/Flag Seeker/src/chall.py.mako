@@ -11,8 +11,8 @@ import sys
 import termios
 import tty
 
-WIDTH = 250
-HEIGHT = 80
+WIDTH = 629
+HEIGHT = 135
 KEY_MAP = {
     b"\x1b[A": "up",
     b"\x1b[B": "down",
@@ -28,15 +28,24 @@ player: tuple[int, int]
 tiles: list[list[str]]
 
 
+def absolute_print(*args, **kwargs):
+    while True:
+        try:
+            print(*args, **kwargs)
+            break
+        except BlockingIOError:
+            continue
+
+
 def get_terminal_size():
-    winsize = fcntl.ioctl(sys.stdout.fileno(), termios.TIOCGWINSZ, struct.pack("<HHHH", 0, 0, 0, 0))
+    winsize = fcntl.ioctl(sys.stdin.fileno(), termios.TIOCGWINSZ, struct.pack("<HHHH", 0, 0, 0, 0))
     rows, cols, _, _ = struct.unpack("<HHHH", winsize)
     return rows, cols
 
 
 def set_terminal_size(rows, cols):
     winsize = struct.pack("<HHHH", rows, cols, 0, 0)
-    fcntl.ioctl(sys.stdout.fileno(), termios.TIOCSWINSZ, winsize)
+    fcntl.ioctl(sys.stdin.fileno(), termios.TIOCSWINSZ, winsize)
 
 
 def init_tiles():
@@ -78,7 +87,7 @@ def init_player():
 
 
 def clear_screen():
-    print("\x1b[2J\x1b[H", end="")
+    absolute_print("\x1b[2J\x1b[H", end="")
 
 
 def set_non_blocking(fd):
@@ -134,8 +143,8 @@ def handle_input():
         player = player[0] - 1, player[1]
     elif key == "right":
         player = player[0] + 1, player[1]
-    elif match := re.match(r"\x1b\[8;(\d+);(\d+)t", key):
-        rows, cols = match.groups()
+    elif match_result := re.match(r"\x1b\[8;(\d+);(\d+)t", key):
+        rows, cols = match_result.groups()
         set_terminal_size(int(rows), int(cols))
     else:
         return False
@@ -163,22 +172,22 @@ def print_map():
     player = player_x, player_y
 
     clear_screen()
-    print("You found", tiles[player_y][player_x], end="\r\n")
+    absolute_print("You found", tiles[player_y][player_x], end="\r\n")
     for y in range(start_y, end_y):
         for x in range(start_x, end_x):
             if x == player_x and y == player_y:
-                print("ඞ", end="")
+                absolute_print("ඞ", end="")
             else:
-                print("_", end="")
+                absolute_print("_", end="")
         if WIDTH < cols and y < end_y - 1:
-            print(end="\r\n")
+            absolute_print(end="\r\n")
     sys.stdout.flush()
 
 
 def start():
     global tiles, player
 
-    if not sys.stdout.isatty() or not sys.stdin.isatty():
+    if not sys.stdin.isatty():
         raise RuntimeError("Please run in a TTY")
 
     init()
