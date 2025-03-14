@@ -7,6 +7,8 @@ description: |-
 
     NB: this chall has been tested on the remote server with 20 simultaneous connections with 100% winrate. please try to solve this challenge in your local machine before trying it on the remote server.
 
+    Author: **yellow**
+
 attribution: yellow
 
 value: 1000
