@@ -7,11 +7,11 @@ description: |-
 
     Author: **Etynso**
 
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
-    decay: 30
+    initial: 1000
+    decay: 31
     minimum: 100
 
 flags:
@@ -20,5 +20,5 @@ flags:
 files:
     - dist/chall.py
 
-state: hidden
+state: visible
 version: "0.1"

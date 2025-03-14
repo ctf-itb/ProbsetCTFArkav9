@@ -8,11 +8,11 @@ description: |-
 
     Author: **w1ntr**
 
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
-    decay: 30
+    initial: 1000
+    decay: 31
     minimum: 100
 
 flags:
@@ -29,7 +29,7 @@ files:
     - dist/output.txt
 
 # If provided, the field can take one of two values: hidden, visible.
-state: hidden
+state: visible
 
 # Specifies what version of the challenge specification was used.
 version: "0.1"
