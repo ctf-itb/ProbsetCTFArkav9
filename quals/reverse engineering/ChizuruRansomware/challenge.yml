@@ -1,0 +1,22 @@
+name: "ChizuruRansomware"
+category: reverse engineering
+description: |- 
+    While I was desperately searching for my fiancé's whereabouts, someone sent me an email containing ransomware named Chizuru. How dare they make fun of me when I was already feeling lost? The ransomware also encrypted one of my most memorable files with my fiancé. It felt like the whole world was turning against me.
+
+    Author: **Mizuhara Chizuru**
+
+value: 500
+type: dynamic
+extra:
+    initial: 500
+    decay: 30
+    minimum: 100
+
+flags:
+    - ARKAV{unf0rtun4t3ly_it's_4ll_just_4_m3m0ry}
+
+files:
+    - dist/ChizuruRansomware.zip
+
+state: hidden
+version: "0.1"
