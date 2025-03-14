@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 
 import fcntl
+import io
 import os
 import random
 import re
-import selectors
+import select
 import signal
 import struct
 import sys
 import termios
+import time
 import tty
 
 WIDTH = 629
@@ -22,19 +24,9 @@ KEY_MAP = {
     b"\x1b": "escape",
 }
 
-selector = selectors.DefaultSelector()
 old_settings = termios.tcgetattr(sys.stdin.fileno())
 player: tuple[int, int]
 tiles: list[list[str]]
-
-
-def absolute_print(*args, **kwargs):
-    while True:
-        try:
-            print(*args, **kwargs)
-            break
-        except BlockingIOError:
-            continue
 
 
 def get_terminal_size():
@@ -86,10 +78,6 @@ def init_player():
     return (WIDTH // 2, HEIGHT // 2)
 
 
-def clear_screen():
-    absolute_print("\x1b[2J\x1b[H", end="")
-
-
 def set_non_blocking(fd):
     fcntl.fcntl(fd, fcntl.F_SETFL, fcntl.fcntl(fd, fcntl.F_GETFL) | os.O_NONBLOCK)
 
@@ -109,17 +97,15 @@ def exit_raw_mode():
 
 
 def read_key():
-    events = selector.select()
-    for key, mask in events:
-        if key.fileobj == sys.stdin:
-            return sys.stdin.buffer.read(16)
+    rlist, _, _ = select.select([sys.stdin], [], [])
+    if sys.stdin in rlist:
+        return sys.stdin.buffer.read(16)
     return b""
 
 
 def init():
     enter_raw_mode()
     set_non_blocking(sys.stdin.fileno())
-    selector.register(sys.stdin, selectors.EVENT_READ)
 
 
 def fini():
@@ -171,17 +157,20 @@ def print_map():
         player_y = start_y
     player = player_x, player_y
 
-    clear_screen()
-    absolute_print("You found", tiles[player_y][player_x], end="\r\n")
+    buffer = io.StringIO()
+
+    buffer.write("\x1b[2J\x1b[H")
+    buffer.write(f"You found {tiles[player_y][player_x]}\r\n")
     for y in range(start_y, end_y):
         for x in range(start_x, end_x):
             if x == player_x and y == player_y:
-                absolute_print("ඞ", end="")
+                buffer.write("ඞ")
             else:
-                absolute_print("_", end="")
+                buffer.write("_")
         if WIDTH < cols and y < end_y - 1:
-            absolute_print(end="\r\n")
-    sys.stdout.flush()
+            buffer.write("\r\n")
+
+    sys.stdout.write(buffer.getvalue())
 
 
 def start():
@@ -203,4 +192,7 @@ def start():
             print_map()
 
 
+if sys.stdout.isatty():
+    # open stdout in write-only mode so it will never block
+    sys.stdout = open(os.ttyname(sys.stdout.fileno()), "w")
 start()
