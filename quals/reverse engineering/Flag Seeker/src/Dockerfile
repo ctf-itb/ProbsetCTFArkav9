@@ -1,9 +1,6 @@
-FROM python:3.12.8-slim
-ENV DEBIAN_FRONTEND=noninteractive
+FROM python:3.12.8-alpine
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends socat && \
-    rm -rf /var/cache/apt/archives /var/lib/apt/lists
+RUN apk add --no-cache libc6-compat socat
 
 COPY chall /app/chall
 
