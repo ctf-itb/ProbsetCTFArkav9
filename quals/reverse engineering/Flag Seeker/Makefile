@@ -33,7 +33,7 @@ define CHALLENGE
 name: "Flag Seeker"
 category: reverse engineering
 description: |- 
-    "The only thing that you absolutely have to know is the location of the flag." – Elbert Einstein (probably)
+    "The only thing that you absolutely have to know is the location of the flag." – Albert Einstein (probably)
 
     Author: **msfir**
 
