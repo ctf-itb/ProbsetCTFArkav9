@@ -30,7 +30,7 @@ value: 1000
 type: dynamic
 extra:
     initial: 1000
-    decay: 31
+    decay: 30
     minimum: 100
 
 flags:
