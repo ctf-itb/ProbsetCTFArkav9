@@ -12,4 +12,4 @@ RUN wget --no-check-certificate -O /usr/bin/socat \
 
 WORKDIR /app
 
-CMD ["socat", "TCP-LISTEN:1337,reuseaddr,fork", "EXEC:/app/chall,stderr,pty,echo=0"]
+CMD ["socat", "TCP-LISTEN:8481,reuseaddr,fork", "EXEC:/app/chall,stderr,pty,echo=0"]
