@@ -15,9 +15,9 @@ int main()
     try
     {
         cout << "Flag: ";
-        std::string input;
+        string input;
         cin >> input;
-        memcpy(flag.data(), input.data(), input.size());
+        memcpy(flag.data(), input.data(), flag.size());
         auto digest = MD5::hash_u8(input.substr(0, flag.size()));
         if (digest == flag_hash)
         {

@@ -149,6 +149,7 @@ DW_OP = {
     "piece": 147,
     "deref_size": 148,
     "xderef_size": 149,
+    "nop": 150,
 }
 
 
@@ -442,13 +443,16 @@ class DwarfExpressionBuilder:
 
 
 if __name__ == "__main__":
-    KEY_ADDR = 0x40D010
-    PLAINTEXT_ADDR = 0x40D280
+    KEY_ADDR = 0x406010
+    PLAINTEXT_ADDR = 0x406280
     PLAINTEXT_SIZE = 56
     BLOCK_SIZE = 8
     NUM_BLOCKS = math.ceil(PLAINTEXT_SIZE / BLOCK_SIZE)
     NUM_ROUNDS = 8
     DELTA = 0x13371337
+
+    IF_CORRECT = 0x401302
+    IF_WRONG = 0x401386
 
     builder = DwarfExpressionBuilder()
 
@@ -605,9 +609,9 @@ if __name__ == "__main__":
         .eq()
         .band()
         .bra(12)
-        .addr(0x4012AF)
+        .addr(IF_WRONG)
         .skip(9)
-        .addr(0x401246)
+        .addr(IF_CORRECT)
     )
     result = builder.get_bytes()
     print(",".join(map(hex, [*encode_uleb128(len(result)), *result])))

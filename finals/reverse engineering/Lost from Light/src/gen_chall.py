@@ -31,7 +31,7 @@ check_output(
         "-fno-pie",
         "-no-pie",
         "-Wl,-z,relro,-z,now",
-        "-O3",
+        # "-O3",
         "-o",
         "chall",
         src.as_posix(),
