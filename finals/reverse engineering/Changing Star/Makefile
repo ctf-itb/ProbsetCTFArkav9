@@ -45,7 +45,7 @@ description: |-
     Or birth the dawn from ash and flame...
     No one remains, yet all is named.
 
-    **NP: Shadow Slave is peak fiction**
+    **NP: read Shadow Slave, it's PEAK**
 
     Author: **msfir**
 
