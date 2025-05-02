@@ -212,32 +212,18 @@ if __name__ == "__main__":
             .over()  # [v1, v0, v1, v0, new_sum, k3, k2, k1, k0]
             .const(4)
             .shl()  # [v1<<4, v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(8)  # [k0, v1<<4, v0, v1, v0, new_sum, k3, k2, k1, k0]
             .plus()  # [k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(2)  # [v1, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
             .pick(5)  # [new_sum, v1, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
             .plus()  # [v1+new_sum, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(3)  # [v1, v1+new_sum, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
             .const(5)
             .shr()  # [v1>>5, v1+new_sum, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(9)
             .plus()  # [k1+(v1>>5), v1+new_sum, k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .xor()
-            .const(0xFFFFFFFF)
-            .band()
             .xor()  # [k1+(v1>>5)^v1+new_sum^k0+(v1<<4), v0, v1, v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .plus()  # [new_v0, v1, v0, new_sum, k3, k2, k1, k0]
             .const(0xFFFFFFFF)
             .band()
@@ -248,36 +234,22 @@ if __name__ == "__main__":
             .over()  # [new_v0, v1, new_v0, new_sum, k3, k2, k1, k0]
             .const(4)
             .shl()  # [new_v0<<4, v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(5)  # [k2, new_v0<<4, v1, new_v0, new_sum, k3, k2, k1, k0]
             .plus()  # [k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(2)  # [new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
             .pick(4)  # [new_sum, new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
             .plus()  # [new_sum+new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(
                 3
             )  # [new_v0, new_sum+new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
             .const(5)
             .shr()  # [new_v0>>5, new_sum+new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .pick(
                 6
             )  # [k3, new_v0>>5, new_sum+new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
             .plus()  # [k3+(new_v0>>5), new_sum+new_v0, k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .xor()
-            .const(0xFFFFFFFF)
-            .band()
             .xor()  # [k3+(new_v0>>5)^new_sum+new_v0^k2+(new_v0<<4), v1, new_v0, new_sum, k3, k2, k1, k0]
-            .const(0xFFFFFFFF)
-            .band()
             .plus()  # [new_v1, new_v0, new_sum, k3, k2, k1, k0]
             .const(0xFFFFFFFF)
             .band()

@@ -443,16 +443,16 @@ class DwarfExpressionBuilder:
 
 
 if __name__ == "__main__":
-    KEY_ADDR = 0x406010
-    PLAINTEXT_ADDR = 0x406280
+    KEY_ADDR = 0x405010
+    PLAINTEXT_ADDR = 0x405280
     PLAINTEXT_SIZE = 56
     BLOCK_SIZE = 8
     NUM_BLOCKS = math.ceil(PLAINTEXT_SIZE / BLOCK_SIZE)
     NUM_ROUNDS = 8
     DELTA = 0x13371337
 
-    IF_CORRECT = 0x401302
-    IF_WRONG = 0x401386
+    IF_CORRECT = 0x40132C
+    IF_WRONG = 0x4013B0
 
     builder = DwarfExpressionBuilder()
 
@@ -484,32 +484,18 @@ if __name__ == "__main__":
                 .over()
                 .lit(4)
                 .shl()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(8)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(2)
                 .pick(5)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(3)
                 .lit(5)
                 .shr()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(9)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .xor()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .xor()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .plus()
                 .const4u(0xFFFFFFFF)
                 .band()
@@ -520,32 +506,18 @@ if __name__ == "__main__":
                 .over()
                 .lit(4)
                 .shl()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(5)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(2)
                 .pick(4)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(3)
                 .lit(5)
                 .shr()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .pick(6)
                 .plus()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .xor()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .xor()
-                .const4u(0xFFFFFFFF)
-                .band()
                 .plus()
                 .const4u(0xFFFFFFFF)
                 .band()

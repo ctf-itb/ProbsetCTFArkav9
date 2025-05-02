@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <cstring>
+#include <algorithm>
 
 #include "md5_simd.cpp"
 
@@ -17,7 +18,7 @@ int main()
         cout << "Flag: ";
         string input;
         cin >> input;
-        memcpy(flag.data(), input.data(), flag.size());
+        memcpy(flag.data(), input.data(), min(flag.size(), input.size()));
         auto digest = MD5::hash_u8(input.substr(0, flag.size()));
         if (digest == flag_hash)
         {
