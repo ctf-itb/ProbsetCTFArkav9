@@ -38,4 +38,4 @@ check_output(
     ]
 )
 
-src.unlink()
+# src.unlink()
