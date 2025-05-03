@@ -3,6 +3,6 @@ services:
   chall:
     build: .
     ports:
-      - 12000:1337
-    restart: always
+      - 8481:8481
+    restart: on-failure
     container_name: zzz

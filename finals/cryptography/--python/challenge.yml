@@ -1,0 +1,32 @@
+name: "--python"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: cryptography
+description: |- 
+    amimir
+
+attribution: azuketto
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 9
+    minimum: 100
+
+connection_info: nc ctf.arkavidia.com 8042
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{the_hardest_part_of_computer_science_is_naming_variables_challs_and_flags_9e2bf30ae454ab36}
+
+
+# Provide paths to files from the same directory that this file is in
+files:
+    - dist/chall.py
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"

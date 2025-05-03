@@ -1,19 +1,19 @@
-name: "abstract art"
+name: "Abstract Art"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: miscellaneous
 description: |- 
-    Ramadan is almost here, and I'll be fasting during the final round of the competition. My mind drifts to thoughts of breaking my fast with a glass of **es kolang**-kaling cap Badut. While waiting, I've created a cryptic program hidden within the colored canvas. Can you figure it out?
+    The qualification round is here, and I'll be fasting throughout the competition. My mind drifts to thoughts of breaking my fast with a glass of **es kolang**-kaling cap Badut. While waiting, I've created a cryptic program hidden within the colored canvas. Can you figure it out?
 
     For clarity, I made a 10x scaled copy of the art. Both are identical.
 
     Author: **dovodedomo**
 
 # Don't change this
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
+    initial: 1000
     decay: 30
     minimum: 100
 

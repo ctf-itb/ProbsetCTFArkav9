@@ -1,19 +1,23 @@
-name: "beat frendy"
+name: "Beat Frendy"
 # This is used to group challenges in the CTFd UI.
 # choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
 category: miscellaneous
 description: |- 
     Beat me using g2g4 opening.
 
-    ![magnus](https://images.chesscomfiles.com/uploads/v1/news/1274649.02ee5022.668x375o.cd10cc2c7bb7@2x.png)
+    ![magnus](https://i.ibb.co.com/dsC5x5hW/magnus.png)
+
+    Bagi dua bang biar wuswus
+    
+    `nc 20.189.72.196 8091`
 
     Author: **frennn**
 
 # Don't change this
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
+    initial: 1000
     decay: 30
     minimum: 100
 

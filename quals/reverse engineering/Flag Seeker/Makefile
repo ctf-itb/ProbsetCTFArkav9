@@ -7,8 +7,8 @@ all: $(OUTPUT) src/chall challenge.yml
 $(OUTPUT): src/chall.py.mako src/obfuscator.py
 	@echo "[+] Building with test flag..."
 	@cd src
-	@mako-render --var flag="Flag" --output-file chall.py chall.py.mako
-	@python obfuscator.py chall.py chall.py
+	@mako-render --var flag="FLAG" --output-file chall.py chall.py.mako
+	@python obfuscator.py chall.py chall.py --seed=arkavidia9.0
 	@cython --embed --directive language_level=3 -o chall.c chall.py
 	@gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
 	@rm -f chall.py chall.c
@@ -23,8 +23,8 @@ $(OUTPUT): src/chall.py.mako src/obfuscator.py
 src/chall: $(OUTPUT) src/chall.py.mako src/obfuscator.py src/flag.txt
 	@echo "[+] Building with real flag..."
 	@cd src
-	@mako-render --var flag="$(FLAG)" --output-file chall.py chall.py.mako
-	@python obfuscator.py chall.py chall.py
+	@mako-render --var flag="FLAG: $(FLAG)" --output-file chall.py chall.py.mako
+	@python obfuscator.py chall.py chall.py --seed=arkavidia9.0
 	@cython --embed --directive language_level=3 -o chall.c chall.py
 	@gcc -O0 -ggdb -o chall -I /usr/include/python3.12 chall.c -lpython3.12
 	@rm -f chall.py chall.c
@@ -33,14 +33,14 @@ define CHALLENGE
 name: "Flag Seeker"
 category: reverse engineering
 description: |- 
-    "The only thing that you absolutely have to know is the location of the flag." – Elbert Einstein (probably)
+    "The only thing that you absolutely have to know is the location of the flag." – Albert Einstein (probably)
 
     Author: **msfir**
 
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
+    initial: 1000
     decay: 30
     minimum: 100
 

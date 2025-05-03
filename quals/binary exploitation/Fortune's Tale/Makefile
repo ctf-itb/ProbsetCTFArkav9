@@ -26,10 +26,10 @@ description: |-
 
     Author: **msfir**
 
-value: 500
+value: 1000
 type: dynamic
 extra:
-    initial: 500
+    initial: 1000
     decay: 30
     minimum: 100
 
