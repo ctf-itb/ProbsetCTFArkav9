@@ -43,7 +43,7 @@ def main() :
     E1 = Variety1(a1, b1)
     G1 = E1(x1, y1)
     
-    if (195306067165045895827288868805553560 * G1).list() == [1, 0] :
+    if (195306067165045895827288868805553560 * G1).list() == [1, 0] or x1 == 0 or y1 == 0:
         print("I don't like that point 🤔")
         exit()
 
