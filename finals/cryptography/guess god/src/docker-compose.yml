@@ -1,0 +1,9 @@
+name: cry-guessgod
+services:
+  guess-god:
+    build: .
+    restart: on-failure
+    container_name: chall-dukun
+    read_only: false
+    ports:
+      - 8369:8369
