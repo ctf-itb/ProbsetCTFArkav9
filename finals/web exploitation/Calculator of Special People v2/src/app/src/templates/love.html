@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="mt-5 text-center">
+        <h2>💞 Your Love Match 💞</h2>
+        <p id="result" class="fs-4 fw-semibold">
+            {{ result | safe }}
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: ./app
+    environment:
+      - SECRET_KEY=${SCRT}
+      - PYTHONUNBUFFERED=1
+    ports:
+      - 8033:5001
+    depends_on:
+      - internal_app
+    networks:
+      - internal_network
+
+  internal_app:
+    build:
+      context: ./internal_app
+    environment:
+      - SECRET_KEY=${SCRT}
+      - PYTHONUNBUFFERED=1
+    networks:
+      - internal_network
+
+networks:
+  internal_network:
+    driver: bridge
