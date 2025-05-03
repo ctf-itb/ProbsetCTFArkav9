@@ -30,7 +30,7 @@ value: 1000
 type: dynamic
 extra:
     initial: 1000
-    decay: 10
+    decay: 9
     minimum: 100
 
 connection_info: nc hostname 12000
@@ -41,7 +41,7 @@ flags:
 files:
     - $(OUTPUT)
 
-state: hidden
+state: visible
 version: "0.1"
 endef
 

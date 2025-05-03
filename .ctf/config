@@ -1,6 +1,6 @@
 [config]
 url = https://ctf.arkavidia.com
-access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed9cba
+access_token = ctfd_74f19034abaad706eada9ac58839c28e71f9945a2b31f70d4b5c916abbfdca72
 
 [challenges]
 ./quals/cryptography/Weird Format = ./quals/cryptography/Weird Format
@@ -27,6 +27,8 @@ access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed
 ./quals/miscellaneous/Minji Anak UNPAD = ./quals/miscellaneous/Minji Anak UNPAD
 ./quals/miscellaneous/Beat Frendy = ./quals/miscellaneous/Beat Frendy
 ./quals/miscellaneous/Abstract Art = ./quals/miscellaneous/Abstract Art
+./quals/cryptography/oLLLama 9.0 = ./quals/cryptography/oLLLama 9.0
+./quals/miscellaneous/The 1000th Regrexor = ./quals/miscellaneous/The 1000th Regrexor
 ./warmups/forensics/Cropped = ./warmups/forensics/Cropped
 ./warmups/cryptography/lebaran = ./warmups/cryptography/lebaran
 ./warmups/web exploitation/Magic Shop = ./warmups/web exploitation/Magic Shop
@@ -34,5 +36,6 @@ access_token = ctfd_44db2a8be6abdb6504574130f8211132a6e5195331a5a49509594ea52fed
 ./finals/cryptography/--python = ./finals/cryptography/--python
 ./finals/binary exploitation/Impossible Roulette = ./finals/binary exploitation/Impossible Roulette
 ./finals/miscellaneous/zzz = ./finals/miscellaneous/zzz
-./quals/cryptography/oLLLama 9.0 = ./quals/cryptography/oLLLama 9.0
-./quals/miscellaneous/The 1000th Regrexor = ./quals/miscellaneous/The 1000th Regrexor
+./finals/reverse engineering/Changing Start = ./finals/reverse engineering/Changing Start
+./finals/reverse engineering/Lost from Light = ./finals/reverse engineering/Lost from Light
+./finals/web exploitation/Old But Gold = ./finals/web exploitation/Old But Gold

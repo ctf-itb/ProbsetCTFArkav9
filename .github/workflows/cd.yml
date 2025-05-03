@@ -6,7 +6,7 @@ on:
       - 'main'
 jobs:
   install_challs:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
       with:
@@ -19,7 +19,7 @@ jobs:
       shell: bash
   sync_challs:
     needs: install_challs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
     - name: Run script file

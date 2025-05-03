@@ -18,5 +18,5 @@ flags:
 files:
     - dist/dist.zip
 
-state: visible
+state: hidden
 version: "0.1"

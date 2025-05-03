@@ -33,7 +33,7 @@ files:
     - dist/art.zip
 
 # If provided, the field can take one of two values: hidden, visible.
-state: visible
+state: hidden
 
 # Specifies what version of the challenge specification was used.
 version: "0.1"

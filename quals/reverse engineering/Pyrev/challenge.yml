@@ -20,5 +20,5 @@ flags:
 files:
     - dist/chall.py
 
-state: visible
+state: hidden
 version: "0.1"
