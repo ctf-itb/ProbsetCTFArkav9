@@ -1,0 +1,24 @@
+name: "Calculator of Special People v2"
+category: web exploitation
+description: |- 
+    A new and improved Love Calculator with enhanced precision ❤️😉
+
+    Author: **um**
+
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 9
+    minimum: 100
+
+connection_info: http://ctf.arkavidia.com:8033/
+
+flags:
+    - ARKAV{ssti_ssrf_cookie-forge_norway-yaml_blind-rce__ggs_gzz_bang}
+
+files:
+    - dist/dist.zip
+
+state: visible
+version: "0.1"
