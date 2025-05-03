@@ -38,7 +38,7 @@ def main() :
     response = recv()
 
     b1 = response['b1']
-    x1, y1 = response['x'], response['y']
+    x1, y1 = response['x'] % p, response['y'] % p
 
     E1 = Variety1(a1, b1)
     G1 = E1(x1, y1)
