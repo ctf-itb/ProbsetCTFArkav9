@@ -1,0 +1,42 @@
+name: "Farewell"
+# This is used to group challenges in the CTFd UI.
+# choose one: binary exploitation, reverse engineering, web exploitation, cryptography, forensics, miscellaneous.
+category: forensics
+description: |- 
+    
+    It's been almost a week since I last saw Chizuru. I've gone to her place several times, but no one answered the door. However, I could hear her sobbing from outside on a few occasions. All of this started after Chizuru and the team assigned to search for Darmodar arrived at Chicken Island to look for clues. I asked the team for the file that supposedly contains information related to Darmodar, but I couldn't solve the problem. Can you help me figure it out and find out why Chizuru is so sad?
+
+    ![chizuru crying](https://media1.tenor.com/m/ivdbfNX_-jYAAAAd/rent-a-girlfriend-chizuru-ichinose.gif)
+
+    Attachment:
+    https://drive.google.com/file/d/1vxRb-LGhhPGGtTUwyj09mqD9wU7TzFCU/view?usp=drive_link
+    
+    Password: a34cbeaf31823ae700d1916b32b6d5cc7f3e466d780b45d60696499b0bd75ecc
+
+    Author: **Mini Yaemori**
+
+# Don't change this
+value: 1000
+type: dynamic
+extra:
+    initial: 1000
+    decay: 9
+    minimum: 100
+
+# connection_info is used to provide a link, hostname, or instructions on how to connect to a challenge
+# connection_info: nc hostname 12345 # or "https://example.com", remove if unused
+
+flags:
+    # A static case sensitive flag
+    - ARKAV{d0n't_cry_b3caus3_it's_0v3r,_smil3_b3caus3_it_happ3n3d}
+
+
+# Provide paths to files from the same directory that this file is in
+# files:
+#     - dist/untuk_peserta.zip
+
+# If provided, the field can take one of two values: hidden, visible.
+state: visible
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
