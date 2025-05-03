@@ -38,12 +38,12 @@ def main() :
     response = recv()
 
     b1 = response['b1']
-    x1, y1 = response['x'], response['y']
+    x1, y1 = response['x'] % p, response['y'] % p
 
     E1 = Variety1(a1, b1)
     G1 = E1(x1, y1)
     
-    if (195306067165045895827288868805553560 * G1).list() == [1, 0] :
+    if (195306067165045895827288868805553560 * G1).list() == [1, 0] or x1 == 0 or y1 == 0:
         print("I don't like that point 🤔")
         exit()
 
@@ -72,4 +72,4 @@ if __name__ == "__main__" :
     try :
         main()
     except Exception as e :
-        print(e)
+        print(e.__class__)
