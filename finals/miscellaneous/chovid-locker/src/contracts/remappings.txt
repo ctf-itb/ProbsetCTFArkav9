@@ -1,0 +1,4 @@
+@src/=src/
+@openzeppelin/=lib/openzeppelin-contracts/contracts/
+erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/
+openzeppelin-contracts/=lib/openzeppelin-contracts/

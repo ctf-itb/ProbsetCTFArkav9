@@ -1,0 +1,3 @@
+[submodule "finals/miscellaneous/chovid-locker/src/contracts/lib/openzeppelin-contracts"]
+	path = finals/miscellaneous/chovid-locker/src/contracts/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
