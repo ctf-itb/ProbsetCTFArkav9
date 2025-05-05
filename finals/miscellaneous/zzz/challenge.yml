@@ -21,5 +21,15 @@ flags:
 files:
     - dist/dist.zip
 
+hints:
+    - {
+        content: "Several builtin functions are, indeed, involved in the intended solution. And guess what? It pops a shell! How wonderful!",
+        cost: 0
+    }
+    - {
+        content: "Ok sorry. The main logic is actually \"hidden\" inside the ELF metadata. You can use several programs to reveal it. It's not steganography tho.",
+        cost: 0
+    }
+
 state: visible
 version: "0.1"

@@ -49,5 +49,15 @@ flags:
 files:
     - dist/chall
 
+hints:
+    - {
+        content: "Of course it's not about MD5. Maybe you should pay attention to your GDB, especially to `info frame`.",
+        cost: 0
+    }
+    - {
+        content: "Why should you create a new memory when you already have one tho?",
+        cost: 0
+    }
+
 state: visible
 version: "0.1"

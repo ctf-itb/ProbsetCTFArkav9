@@ -20,5 +20,11 @@ flags:
 files:
     - dist/chall.zip
 
+hints:
+    - {
+        content: "Variety1 and Variety2 both form finite fields\n\nVariety1 is a commonly seen field (note that it doesn't have a lift x, not because it's a secret but because it doesn't need one)\n\nVariety2 forms a 'famous' equation",
+        cost: 0
+    }
+
 state: visible
 version: "0.1"
