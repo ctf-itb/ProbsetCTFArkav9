@@ -66,7 +66,7 @@ def main():
     
 if __name__ == '__main__':
     try:
-        signal.alarm(69)
+        signal.alarm(360)
         main()
     except Exception as e:
         print(e)
