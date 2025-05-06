@@ -44,5 +44,15 @@ flags:
 # If provided, the field can take one of two values: hidden, visible.
 state: visible
 
+hints:
+    - {
+        content: "In the doc which have message.txt on the download folder, it says that the user has been infected by APT. And there is also clearly a strange bat there. But really, opening the browser and doing strange things? it must be clear that the threat actor is not just opening the browser, but what? FYI the browser is just a normal browser too, there is nothing strange about the binary. Is it possible that the threat actor put persistence with uncommon mechanism?",
+        cost: 0
+    }
+    - {
+        content: "ah I finally found it. Here it is https://help.autodesk.com/view/SGDEV/ENU/?guid=SGD_ami_custom_browser_protocols_html",
+        cost: 0
+    }
+
 # Specifies what version of the challenge specification was used.
 version: "0.1"
