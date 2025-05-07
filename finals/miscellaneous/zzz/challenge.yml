@@ -27,7 +27,7 @@ hints:
         cost: 0
     }
     - {
-        content: "Ok sorry. The main logic is actually \"hidden\" inside the ELF metadata. You can use several programs to reveal it. It's not steganography tho.",
+        content: "Why should you create a new memory when you already have one tho?",
         cost: 0
     }
 
